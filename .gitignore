@@ -1,3 +1,4 @@
+.DS_Store
 # Logs
 logs
 *.log
@@ -31,8 +32,15 @@ dist-ssr
 .mops
 
 # Environment variables
+/build
+/.svelte-kit
+/package
 .env
 .env.local
 .env.development
 .env.test
 .env.production
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

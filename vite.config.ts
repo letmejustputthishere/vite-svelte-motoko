@@ -1,17 +1,13 @@
-/// <reference types="vitest" />
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
 import environment from 'vite-plugin-environment';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 export default defineConfig({
-  root: 'src',
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-  },
+	plugins: [sveltekit(),
+    environment('all', { prefix: 'CANISTER_' }),
+    environment('all', { prefix: 'DFX_' }),
+    environment({ BACKEND_CANISTER_ID: '' }),
+	],
   optimizeDeps: {
     esbuildOptions: {
       define: {
@@ -27,15 +23,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    react(),
-    environment('all', { prefix: 'CANISTER_' }),
-    environment('all', { prefix: 'DFX_' }),
-    environment({ BACKEND_CANISTER_ID: '' }),
-  ],
-  test: {
-    environment: 'jsdom',
-    setupFiles: 'setupTests.ts',
-    cache: { dir: '../node_modules/.vitest' },
-  },
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	}
 });
