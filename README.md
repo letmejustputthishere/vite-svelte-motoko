@@ -16,6 +16,7 @@ Run the following commands in a new, empty project directory:
 
 ```sh
 npx degit letmejustputthishere/vite-sveltekit-motoko # Download this starter project
+cd vite-sveltekit-motoko # Navigate to the project directory
 dfx start --clean --background # Run dfx in the background
 npm run setup # Install packages, deploy canisters, and generate type bindings
 
