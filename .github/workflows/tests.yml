@@ -26,6 +26,8 @@ jobs:
           cache: 'npm'
       - name: Install dfx
         uses: dfinity/setup-dfx@main
+      - name: Install mops
+        uses: ZenVoich/setup-mops@v1
       - name: Start dfx
         run: |
           dfx cache install
