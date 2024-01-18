@@ -191,6 +191,9 @@
 		.logo.svelte {
 			animation: logo-spin infinite 60s linear;
 		}
+		.logo.vite {
+			animation: logo-spin infinite 60s linear reverse;
+		}
 	}
 
 	.logo.motoko:hover {
