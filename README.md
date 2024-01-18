@@ -15,7 +15,7 @@ Make sure that [Node.js](https://nodejs.org/en/) `>= 16` and [`dfx`](https://int
 Run the following commands in a new, empty project directory:
 
 ```sh
-npx degit letmejustputthishere/vite-svelte-motoko # Download this starter project
+npx degit letmejustputthishere/vite-sveltekit-motoko # Download this starter project
 dfx start --clean --background # Run dfx in the background
 npm run setup # Install packages, deploy canisters, and generate type bindings
 
