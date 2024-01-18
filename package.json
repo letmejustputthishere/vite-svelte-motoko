@@ -11,7 +11,7 @@
 		"test": "run-s test:backend test:frontend",
 		"test:frontend": "vitest run",
 		"test:backend": "mo-test",
-		"format": "prettier --write \"src/**/*.{json,js,jsx,ts,tsx,css,scss}\" \"backend/**/*.mo\"",
+		"format": "prettier --write .",
 		"sources": "mops sources",
 		"postinstall": "mops install",
 		"dev": "vite dev",
