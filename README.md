@@ -15,7 +15,7 @@ Make sure that [Node.js](https://nodejs.org/en/) `>= 16` and [`dfx`](https://int
 Run the following commands in a new, empty project directory:
 
 ```sh
-npx degit rvanasa/vite-react-motoko # Download this starter project
+npx degit letmejustputthishere/vite-svelte-motoko # Download this starter project
 dfx start --clean --background # Run dfx in the background
 npm run setup # Install packages, deploy canisters, and generate type bindings
 
@@ -27,13 +27,14 @@ When ready, run `dfx deploy --network ic` to deploy your application to the Inte
 ## 🛠️ Technology Stack
 
 - [Vite](https://vitejs.dev/): high-performance tooling for front-end web development
-- [React](https://reactjs.org/): a component-based UI library
+- [SvelteKit](https://kit.svelte.dev/): a component-based UI library
 - [TypeScript](https://www.typescriptlang.org/): JavaScript extended with syntax for types
 - [Sass](https://sass-lang.com/): an extended syntax for CSS stylesheets
 - [Prettier](https://prettier.io/): code formatting for a wide range of supported languages
 - [Motoko](https://github.com/dfinity/motoko#readme): a safe and simple programming language for the Internet Computer
 - [Mops](https://mops.one): an on-chain community package manager for Motoko
 - [mo-dev](https://github.com/dfinity/motoko-dev-server#readme): a live reload development server for Motoko
+- [eslint](https://eslint.org/): a static code analysis tool used in software development for identifying problematic patterns or code that doesn't adhere to certain style guidelines in JavaScript and TypeScript
 
 ## 📚 Documentation
 
