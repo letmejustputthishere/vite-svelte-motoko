@@ -30,6 +30,7 @@ dist-ssr
 .dfx
 .vessel
 .mops
+deps
 
 # Environment variables
 /build
