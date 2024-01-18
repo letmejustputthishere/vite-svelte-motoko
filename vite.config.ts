@@ -9,8 +9,7 @@ export default defineConfig({
 		// https://vitejs.dev/guide/env-and-mode
 		// https://www.npmjs.com/package/vite-plugin-environment
 		environment('all', { prefix: 'CANISTER_' }),
-		environment('all', { prefix: 'DFX_' }),
-		environment({ BACKEND_CANISTER_ID: '' })
+		environment('all', { prefix: 'DFX_' })
 	],
 	optimizeDeps: {
 		// he global object varies between environments (like window in browsers, global in Node.js), leading to compatibility issues.
