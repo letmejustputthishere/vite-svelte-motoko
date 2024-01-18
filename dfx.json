@@ -7,7 +7,11 @@
 		"frontend": {
 			"dependencies": ["backend"],
 			"type": "assets",
-			"source": ["dist/"]
+			"source": ["build/"]
+		},
+		"internet_identity": {
+			"type": "pull",
+			"id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
 		}
 	},
 	"defaults": {

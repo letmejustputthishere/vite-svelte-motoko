@@ -3,6 +3,7 @@ name: Tests
 on:
   # push:
   #   branches: [ "main" ]
+  workflow_dispatch:
   pull_request:
 
 concurrency:
@@ -11,11 +12,11 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18]
 
     steps:
       - uses: actions/checkout@v3
@@ -23,9 +24,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+      - name: Clear npm cache
+        run: npm cache clean --force
       - name: Install dfx
         uses: dfinity/setup-dfx@main
+      - name: Install mops
+        uses: ZenVoich/setup-mops@v1
       - name: Start dfx
         run: |
           dfx cache install
