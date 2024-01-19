@@ -2,7 +2,8 @@
 	"canisters": {
 		"backend": {
 			"type": "motoko",
-			"main": "backend/main.mo"
+			"main": "backend/main.mo",
+			"post_install": ["echo 'Hello, World!'"]
 		},
 		"frontend": {
 			"dependencies": ["backend"],

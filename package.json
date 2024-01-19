@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"setup": "npm i && npm run init-ii && dfx generate backend && dfx generate internet_identity && dfx deploy && dfx deps deploy",
+		"setup": "npm i && npm run init-ii && dfx generate backend && dfx generate internet_identity && dfx deploy backend && dfx deps deploy",
 		"init-ii": "dfx deps pull && dfx deps init internet_identity --argument '(null)'",
 		"start": "run-p frontend backend",
 		"frontend": "vite --port 3000",

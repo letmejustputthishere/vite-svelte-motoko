@@ -67,8 +67,7 @@
 							: `http://rdmx6-jaaaa-aaaaa-aaadq-cai.localhost:4943`,
 					onSuccess: resolve,
 					onError: reject,
-					windowOpenerFeatures:
-						'toolbar=0,location=0,menubar=0,width=500,height=500,left=100,top=100'
+					windowOpenerFeatures: `toolbar=0,location=0,menubar=0,width=400,height=600,left=${window.screen.width / 2 - 200},top=${window.screen.height / 2 - 300}`
 				});
 			});
 
