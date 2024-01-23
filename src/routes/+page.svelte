@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { HttpAgent } from '@dfinity/agent';
-	import { createActor, backend, canisterId } from '../declarations/backend';
+	import { createActor, canisterId } from '../declarations/backend';
 	import { AuthClient } from '@dfinity/auth-client';
 	import { onMount } from 'svelte';
 
@@ -8,6 +8,7 @@
 	let disabled = false;
 	let greeting = '';
 	let principal = '';
+	let env = process.env.DFX_NETWORK;
 	let state: 'loading' | 'authenticated' | 'unauthenticated' = 'loading';
 
 	onMount(async () => {
@@ -23,9 +24,17 @@
 		}
 	});
 
+	function createUnauthenticatedActor() {
+		return createActor(canisterId, {
+			agentOptions: {
+				host: env
+			}
+		});
+	}
+
 	// we use the default unauthenticated actor
 	// until the user signs in
-	let actor = backend;
+	let actor = createUnauthenticatedActor();
 
 	const handleGreet = async () => {
 		disabled = true;
@@ -76,7 +85,7 @@
 			// At this point we're authenticated, and we can get the identity from the auth client:
 			const identity = authClient.getIdentity();
 			// Using the identity obtained from the auth client, we can create an agent to interact with the IC.
-			const agent = new HttpAgent({ identity });
+			const agent = new HttpAgent({ identity, host: env });
 			// Using the interface description of our webapp, we create an actor that we use to call the service methods.
 			actor = createActor(canisterId, {
 				agent
@@ -96,7 +105,7 @@
 
 			state = 'unauthenticated';
 
-			actor = backend;
+			actor = createUnauthenticatedActor();
 		} catch (err: unknown) {
 			console.error(err);
 		}
