@@ -10,6 +10,7 @@ tasks:
       dfx start --background --clean
       npm i -g ic-mops@latest
       mops toolchain init
+      source ~/.bashrc
       npm run setup
     init: |
       npm start
