@@ -9,6 +9,7 @@ tasks:
       sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
       dfx start --background --clean
       npm i -g ic-mops@latest
+      mops toolchain init
       npm run setup
     init: |
       npm start
