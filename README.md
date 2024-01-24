@@ -1,4 +1,4 @@
-# Vite + React + Motoko
+# Vite + SvelteKit + Motoko
 
 ### Get started directly in your browser:
 
@@ -10,7 +10,7 @@ For an example of a real-world dapp built using this starter project, check out 
 
 ## 📦 Create a New Project
 
-Make sure that [Node.js](https://nodejs.org/en/) `>= 16` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.14` are installed on your system.
+Make sure that [Node.js](https://nodejs.org/en/) `>= 18` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.15` are installed on your system.
 
 Run the following commands in a new, empty project directory:
 
@@ -36,15 +36,17 @@ When ready, run `dfx deploy --network ic` to deploy your application to the Inte
 - [Mops](https://mops.one): an on-chain community package manager for Motoko
 - [mo-dev](https://github.com/dfinity/motoko-dev-server#readme): a live reload development server for Motoko
 - [eslint](https://eslint.org/): a static code analysis tool used in software development for identifying problematic patterns or code that doesn't adhere to certain style guidelines in JavaScript and TypeScript
+- [Internet Identity](https://github.com/dfinity/internet-identity/tree/main): a decentralized identity provider for the Internet Computer
 
 ## 📚 Documentation
 
 - [Vite developer docs](https://vitejs.dev/guide/)
-- [React quick start guide](https://react.dev/learn)
+- [SvelteKit quick start guide](https://learn.svelte.dev/tutorial/introducing-sveltekit)
 - [Internet Computer docs](https://internetcomputer.org/docs/current/developer-docs/ic-overview)
 - [`dfx.json` reference schema](https://internetcomputer.org/docs/current/references/dfx-json-reference/)
 - [Motoko developer docs](https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/motoko/)
 - [Mops usage instructions](https://j4mwm-bqaaa-aaaam-qajbq-cai.ic0.app/#/docs/install)
+- [Internet Identity docs](https://internetcomputer.org/docs/current/developer-docs/integrations/internet-identity/overview)
 
 ## 💡 Tips and Tricks
 
