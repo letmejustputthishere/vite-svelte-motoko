@@ -12,7 +12,7 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	"onCreateCommand": "nohup bash -c 'dfx start --clean --background&'",
+	"onCreateCommand": "nohup bash -c 'dfx start --clean --background &'",
 	"postCreateCommand": "export MO_DEV_HIDE_URLS=1 && npm i -g ic-mops@latest",
 	"postStartCommand": "([ -f nohup.out ] && (mops toolchain init && . ~/.bashrc && npm run setup && cat nohup.out && rm nohup.out)) || exit 0",
 	"postAttachCommand": "npm run start",
