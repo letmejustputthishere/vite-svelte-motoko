@@ -1,6 +1,9 @@
 # Vite + SvelteKit + Motoko
 
-### Get started directly in your browser:
+### Get started directly:
+
+> [!WARNING]
+> Due to current limitations, this template does not work in a Browser Editor when using gitpod. Please use VS Code for desktop instead.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/letmejustputthishere/vite-sveltekit-motoko)
 
