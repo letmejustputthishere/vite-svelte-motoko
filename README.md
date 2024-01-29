@@ -4,6 +4,8 @@
 
 > [!WARNING]
 > Due to current limitations, this template does not work in a Browser Editor when using gitpod. Please use VS Code for desktop instead.
+> <img width="633" alt="Screenshot 2024-01-29 at 12 44 57" src="https://github.com/letmejustputthishere/vite-sveltekit-motoko/assets/32162112/2f2c025d-354b-47ca-9303-56bce180f6e7">
+
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/letmejustputthishere/vite-sveltekit-motoko)
 
