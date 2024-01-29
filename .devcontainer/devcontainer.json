@@ -1,0 +1,24 @@
+{
+	"name": "ICP Hello World Motoko",
+	"image": "ghcr.io/dfinity/icp-dev-env:1",
+	"forwardPorts": [4943, 3000],
+	"portsAttributes": {
+		"4943": {
+			"label": "dfx",
+			"onAutoForward": "ignore"
+		},
+		"3000": {
+			"label": "dev server",
+			"onAutoForward": "openBrowser"
+		}
+	},
+	"onCreateCommand": "nohup bash -c 'dfx start &'",
+	"postCreateCommand": "npm i -g ic-mops@latest && mops toolchain init && source ~/.bashrc",
+  "postStartCommand": "npm run setup",
+	"postAttachCommand": "([ -f nohup.out ] && (npm run start && cat nohup.out && rm nohup.out)) || exit 0",
+	"customizations": {
+		"vscode": {
+			"extensions": ["dfinity-foundation.vscode-motoko", "svelte.svelte-vscode"]
+		}
+	}
+}
