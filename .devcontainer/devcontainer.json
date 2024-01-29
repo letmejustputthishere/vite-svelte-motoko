@@ -12,10 +12,9 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	"onCreateCommand": "nohup bash -c 'dfx start &'",
-	"postCreateCommand": "npm i -g ic-mops@latest && mops toolchain init && source ~/.bashrc",
-  "postStartCommand": "npm run setup",
-	"postAttachCommand": "([ -f nohup.out ] && (npm run start && cat nohup.out && rm nohup.out)) || exit 0",
+	"postCreateCommand": "export MO_DEV_HIDE_URLS=1 && dfx start --background --clean && npm i -g ic-mops@latest && mops toolchain init && npm run setup",
+  "postStartCommand": "npm run start",
+	"postAttachCommand": "npm run start",
 	"customizations": {
 		"vscode": {
 			"extensions": ["dfinity-foundation.vscode-motoko", "svelte.svelte-vscode"]
