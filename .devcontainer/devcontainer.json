@@ -12,8 +12,8 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	"postCreateCommand": "export MO_DEV_HIDE_URLS=1 && dfx start --background --clean && npm i -g ic-mops@latest && mops toolchain init",
-  "postStartCommand": "npm run setup",
+	"postCreateCommand": "export MO_DEV_HIDE_URLS=1 && dfx start --background --clean && npm i -g ic-mops@latest",
+	"postStartCommand": "mops toolchain init && source ~/.bashrc && npm run setup",
 	"postAttachCommand": "npm run start",
 	"customizations": {
 		"vscode": {
