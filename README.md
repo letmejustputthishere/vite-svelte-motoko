@@ -10,7 +10,8 @@ For an example of a real-world dapp built using this starter project, check out 
 
 ## 📦 Create a New Project
 
-Make sure that [Node.js](https://nodejs.org/en/) `>= 18` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.15` are installed on your system.
+> [!IMPORTANT]
+> Make sure that [Node.js](https://nodejs.org/en/) `>= 18`, [mops](https://docs.mops.one/quick-start) `>=0.39.2` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.15` are installed on your system.
 
 Run the following commands in a new, empty project directory:
 
