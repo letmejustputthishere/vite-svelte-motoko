@@ -13,7 +13,7 @@
 		}
 	},
 	"postCreateCommand": "export MO_DEV_HIDE_URLS=1 && dfx start --background --clean && npm i -g ic-mops@latest",
-	"postStartCommand": "mops toolchain init && source ~/.bashrc && npm run setup",
+	"postStartCommand": "mops toolchain init && . ~/.bashrc && npm run setup",
 	"postAttachCommand": "npm run start",
 	"customizations": {
 		"vscode": {
