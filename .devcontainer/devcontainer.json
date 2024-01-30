@@ -12,9 +12,9 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	// "onCreateCommand": "nohup bash -c 'dfx start &'",
-	// "postStartCommand": "npm run setup",
-	// "postAttachCommand": "([ -f nohup.out ] && (npm i && cat nohup.out && rm nohup.out)) || exit 0",
+	"onCreateCommand": "dfx start --clean --background",
+	"postStartCommand": "npm run setup",
+	"postAttachCommand": "npm run start",
 	"customizations": {
 		"vscode": {
 			"extensions": ["dfinity-foundation.vscode-motoko"]
