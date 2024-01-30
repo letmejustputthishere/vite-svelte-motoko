@@ -12,9 +12,7 @@
 			"onAutoForward": "openBrowser"
 		}
 	},
-	"onCreateCommand": "dfx start --clean --background",
-	"postStartCommand": "npm run setup",
-	"postAttachCommand": "npm run start",
+	"postAttachCommand": "dfx stop && dfx start --clean --background && npm run setup && npm run start",
 	"customizations": {
 		"vscode": {
 			"extensions": ["dfinity-foundation.vscode-motoko"]
