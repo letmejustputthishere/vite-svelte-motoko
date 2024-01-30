@@ -22,6 +22,7 @@ export default defineConfig({
 		}
 	},
 	server: {
+		port : 3000,
 		// this is needed to redirect api calls to the local replica locally
 		proxy: {
 			'/api': {
