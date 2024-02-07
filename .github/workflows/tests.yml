@@ -6,12 +6,8 @@ on:
     types: [synchronize, opened, reopened, ready_for_review, unlabeled]
 
 jobs:
-  call_build:
-    uses: ./.github/workflows/build.yml
-
   test:
     runs-on: ubuntu-22.04
-    needs: call_build
 
     steps:
       - uses: actions/checkout@v3
@@ -25,18 +21,6 @@ jobs:
 
       - name: Install mops
         uses: ZenVoich/setup-mops@v1
-
-      - name: download wasm
-        uses: actions/download-artifact@v3
-        with:
-          name: backend.wasm
-          path: .
-
-      - name: Download did
-        uses: actions/download-artifact@v3
-        with:
-          name: backend.did
-          path: .
 
       - name: generate declarations
         run: dfx generate backend
