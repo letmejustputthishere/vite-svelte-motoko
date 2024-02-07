@@ -39,7 +39,7 @@ jobs:
           path: .
 
       - name: generate declarations
-        run: dfx generate
+        run: dfx generate backend
 
       - name: install dependencies
         run: npm i
