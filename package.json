@@ -9,7 +9,7 @@
 		"frontend": "vite --host",
 		"backend": "mo-dev --generate --deploy -y",
 		"build": "vite build",
-		"pretest": "dfx generate",
+		"pretest": "dfx generate backend",
 		"test": "run-s test:e2e test:unit",
 		"test:e2e": "vitest run",
 		"test:unit": "mops test",
