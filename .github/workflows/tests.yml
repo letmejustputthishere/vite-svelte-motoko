@@ -1,38 +1,45 @@
-name: Tests
+name: tests
 
 on:
-  # push:
-  #   branches: [ "main" ]
   workflow_dispatch:
   pull_request:
-
-concurrency:
-  group: ${{ github.head_ref || github.run_id }}
-  cancel-in-progress: true
+    types: [synchronize, opened, reopened, ready_for_review, unlabeled]
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
+  call_build:
+    uses: ./.github/workflows/build.yml
 
-    strategy:
-      matrix:
-        node-version: [18]
+  test:
+    runs-on: ubuntu-22.04
+    needs: call_build
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Clear npm cache
-        run: npm cache clean --force
+          node-version: 18
+
       - name: Install dfx
         uses: dfinity/setup-dfx@main
-      - name: Install mops
-        uses: ZenVoich/setup-mops@v1
-      - name: Start dfx
-        run: |
-          dfx cache install
-          dfx start --background
-      - run: npm run setup
-      - run: npm test
+
+      - name: download wasm
+        uses: actions/download-artifact@v3
+        with:
+          name: backend.wasm
+          path: .
+
+      - name: Download did
+        uses: actions/download-artifact@v3
+        with:
+          name: backend.did
+          path: .
+
+      - name: generate declarations
+        run: dfx generate
+
+      - name: install dependencies
+        run: npm i
+
+      - name: run e2e tests
+        run: npm run test
