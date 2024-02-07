@@ -12,6 +12,7 @@
 		"build-canister": "dfx build backend && dfx generate backend",
 		"pretest": "npm run build-canister",
 		"test": "run-s test:e2e test:unit",
+		"test-ci": "run-s test:e2e test:unit",
 		"test:e2e": "vitest run",
 		"test:unit": "mops test",
 		"format": "prettier --write .",
