@@ -6,7 +6,6 @@
 > Due to current limitations, this template does not work in a Browser Editor when using gitpod or codespaces. Please use VS Code for desktop instead.
 > <img width="633" alt="Screenshot 2024-01-29 at 12 44 57" src="https://github.com/letmejustputthishere/vite-sveltekit-motoko/assets/32162112/2f2c025d-354b-47ca-9303-56bce180f6e7">
 
-
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/letmejustputthishere/vite-sveltekit-motoko)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/letmejustputthishere/vite-sveltekit-motoko?quickstart=1)
@@ -18,7 +17,7 @@ For an example of a real-world dapp built using this starter project, check out 
 ## 📦 Create a New Project
 
 > [!IMPORTANT]
-> Make sure that [Node.js](https://nodejs.org/en/) `>= 18`, [mops](https://docs.mops.one/quick-start) `>=0.39.2` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.16` are installed on your system.
+> Make sure that [Node.js](https://nodejs.org/en/) `>= 18`, [mops](https://docs.mops.one/quick-start) `>=0.39.2` and [`dfx`](https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove) `>= 0.16.1` are installed on your system.
 
 Run the following commands in a new, empty project directory:
 
@@ -45,6 +44,11 @@ When ready, run `dfx deploy --network ic` to deploy your application to the Inte
 - [mo-dev](https://github.com/dfinity/motoko-dev-server#readme): a live reload development server for Motoko
 - [eslint](https://eslint.org/): a static code analysis tool used in software development for identifying problematic patterns or code that doesn't adhere to certain style guidelines in JavaScript and TypeScript
 - [Internet Identity](https://github.com/dfinity/internet-identity/tree/main): a decentralized identity provider for the Internet Computer
+- [pic.js](https://github.com/hadronous/pic-js): an Internet Computer Protocol canister testing library for TypeScript and JavaScript
+
+## 🧪 Testing
+
+You can run `npm run test` to run unit tests using [`mops test`](https://docs.mops.one/cli/mops-test) and end-to-end tests using [`pic.js`](https://hadronous.github.io/pic-js/).
 
 ## 📚 Documentation
 
@@ -55,10 +59,11 @@ When ready, run `dfx deploy --network ic` to deploy your application to the Inte
 - [Motoko developer docs](https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/motoko/)
 - [Mops usage instructions](https://j4mwm-bqaaa-aaaam-qajbq-cai.ic0.app/#/docs/install)
 - [Internet Identity docs](https://internetcomputer.org/docs/current/developer-docs/integrations/internet-identity/overview)
+- [pic-js](https://hadronous.github.io/pic-js/)
 
 ## 💡 Tips and Tricks
 
 - Customize your project's code style by editing the `.prettierrc` file and then running `npm run format`.
 - Reduce the latency of update calls by passing the `--emulator` flag to `dfx start`.
-- Install a Motoko package by running `npx ic-mops add <package-name>`. Here is a [list of available packages](https://mops.one/).
+- Install a Motoko package by running `mops add <package-name>`. Here is a [list of available packages](https://mops.one/).
 - Split your frontend and backend console output by running `npm run frontend` and `npm run backend` in separate terminals.
