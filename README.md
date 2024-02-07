@@ -6,7 +6,6 @@
 > Due to current limitations, this template does not work in a Browser Editor when using gitpod or codespaces. Please use VS Code for desktop instead.
 > <img width="633" alt="Screenshot 2024-01-29 at 12 44 57" src="https://github.com/letmejustputthishere/vite-sveltekit-motoko/assets/32162112/2f2c025d-354b-47ca-9303-56bce180f6e7">
 
-
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/letmejustputthishere/vite-sveltekit-motoko)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/letmejustputthishere/vite-sveltekit-motoko?quickstart=1)
@@ -60,5 +59,5 @@ When ready, run `dfx deploy --network ic` to deploy your application to the Inte
 
 - Customize your project's code style by editing the `.prettierrc` file and then running `npm run format`.
 - Reduce the latency of update calls by passing the `--emulator` flag to `dfx start`.
-- Install a Motoko package by running `npx ic-mops add <package-name>`. Here is a [list of available packages](https://mops.one/).
+- Install a Motoko package by running `mops add <package-name>`. Here is a [list of available packages](https://mops.one/).
 - Split your frontend and backend console output by running `npm run frontend` and `npm run backend` in separate terminals.
