@@ -1,4 +1,4 @@
-# Vite + SvelteKit + Motoko
+# Vite + SvelteKit + Motoko + PicJS + Internet Identity + Mops
 
 ### Get started directly:
 
