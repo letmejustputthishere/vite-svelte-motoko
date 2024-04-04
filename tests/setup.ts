@@ -24,13 +24,12 @@ export async function deployCanister({
 }: DeployOptions) {
 	const encodedInitArgs = IDL.encode(init({ IDL }), [initArgs]);
 	const pic = await PocketIc.create();
-	const fixture = await pic.setupCanister<_SERVICE>(
+	const fixture = await pic.setupCanister<_SERVICE>({
 		idlFactory,
-		WASM_PATH,
-		undefined,
-		encodedInitArgs,
-		deployer
-	);
+		wasm: WASM_PATH,
+		arg: encodedInitArgs,
+		sender: deployer
+	});
 	const actor = fixture.actor;
 	const canisterId = fixture.canisterId;
 	return { pic, actor, canisterId };
