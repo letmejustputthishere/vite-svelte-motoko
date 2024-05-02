@@ -12,7 +12,7 @@
 
 This template gives you everything you need to build a full-stack Web3 application on the [Internet Computer](https://internetcomputer.org/).
 
-For an example of a real-world dapp built using this starter project, check out the [source code](https://github.com/dfinity/feedback) for the [ICRC-7 launchpad]([https://dx.internetcomputer.org/](https://github.com/letmejustputthishere)).
+For an example of a real-world dapp built using this starter project, check out the source code for the [ICRC-7 launchpad](https://github.com/letmejustputthishere/icrc7_launchpad).
 
 ## 📦 Create a New Project
 
