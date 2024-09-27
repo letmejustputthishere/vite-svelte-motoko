@@ -3,7 +3,7 @@
 		"backend": {
 			"type": "motoko",
 			"main": "backend/main.mo",
-			"post_install": ["echo 'Hello, World!'"]
+			"init_arg": "(record { phrase = \"moin\"})"
 		},
 		"frontend": {
 			"dependencies": ["backend"],
@@ -11,8 +11,15 @@
 			"source": ["build/"]
 		},
 		"internet_identity": {
-			"type": "pull",
-			"id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+			"type": "custom",
+			"candid": "https://github.com/dfinity/internet-identity/releases/download/release-2024-09-17/internet_identity.did",
+			"wasm": "https://github.com/dfinity/internet-identity/releases/download/release-2024-09-17/internet_identity_dev.wasm.gz",
+			"remote": {
+				"id": {
+					"ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+				}
+			},
+			"specified_id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
 		}
 	},
 	"defaults": {

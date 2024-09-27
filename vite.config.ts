@@ -11,6 +11,9 @@ export default defineConfig({
 		environment('all', { prefix: 'CANISTER_' }),
 		environment('all', { prefix: 'DFX_' })
 	],
+	build: {
+		target: 'es2022'
+	},
 	optimizeDeps: {
 		// he global object varies between environments (like window in browsers, global in Node.js), leading to compatibility issues.
 		// By defining global as globalThis, developers unify access to the global scope, as globalThis is a standard and
@@ -22,7 +25,7 @@ export default defineConfig({
 		}
 	},
 	server: {
-		port : 3000,
+		port: 3000,
 		// this is needed to redirect api calls to the local replica locally
 		proxy: {
 			'/api': {

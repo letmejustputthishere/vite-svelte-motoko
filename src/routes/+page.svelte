@@ -10,6 +10,10 @@
 	let principal = '';
 	let state: 'loading' | 'authenticated' | 'unauthenticated' = 'loading';
 
+	// we use the default unauthenticated actor
+	// until the user signs in
+	let actor = backend;
+
 	onMount(async () => {
 		let authClient = await AuthClient.create();
 		state = (await authClient.isAuthenticated()) ? 'authenticated' : 'unauthenticated';
@@ -21,10 +25,6 @@
 			});
 		}
 	});
-
-	// we use the default unauthenticated actor
-	// until the user signs in
-	let actor = backend;
 
 	const handleGreet = async () => {
 		disabled = true;
