@@ -1,12 +1,13 @@
-import { describe, it, expect, afterEach, beforeEach } from 'vitest';
+import { describe, it, expect, afterEach, beforeEach, afterAll } from 'vitest';
 
 import { AnonymousIdentity } from '@dfinity/agent';
-import { PocketIc, createIdentity, type Actor } from '@hadronous/pic';
+import { PocketIc, PocketIcServer, createIdentity, type Actor } from '@hadronous/pic';
 import type { _SERVICE } from '../src/declarations/backend/backend.did';
 import { deployCanister } from './setup';
 
 describe('canister tests', () => {
 	let pic: PocketIc;
+	let picServer: PocketIcServer;
 	let actor: Actor<_SERVICE>;
 
 	const alice = createIdentity('superSecretAlicePassword');
@@ -16,9 +17,13 @@ describe('canister tests', () => {
 		await pic.tearDown();
 	});
 
+	afterAll(async () => {
+		await picServer.stop();
+	});
+
 	describe('when calling greet on the canister deployed with the default init args', () => {
 		beforeEach(async () => {
-			({ pic, actor } = await deployCanister({
+			({ pic, picServer, actor } = await deployCanister({
 				deployer: alice.getPrincipal()
 			}));
 		});

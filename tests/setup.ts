@@ -2,7 +2,7 @@ import { IDL } from '@dfinity/candid';
 import { idlFactory, init } from '../src/declarations/backend/backend.did.js';
 import type { _SERVICE } from '../src/declarations/backend/backend.did';
 import { resolve } from 'node:path';
-import { PocketIc } from '@hadronous/pic';
+import { PocketIc, PocketIcServer } from '@hadronous/pic';
 import { Principal } from '@dfinity/principal';
 
 type InitArgs = {
@@ -23,7 +23,8 @@ export async function deployCanister({
 	deployer = Principal.anonymous()
 }: DeployOptions) {
 	const encodedInitArgs = IDL.encode(init({ IDL }), [initArgs]);
-	const pic = await PocketIc.create();
+	const picServer = await PocketIcServer.start();
+	const pic = await PocketIc.create(picServer.getUrl());
 	const fixture = await pic.setupCanister<_SERVICE>({
 		idlFactory,
 		wasm: WASM_PATH,
@@ -32,5 +33,5 @@ export async function deployCanister({
 	});
 	const actor = fixture.actor;
 	const canisterId = fixture.canisterId;
-	return { pic, actor, canisterId };
+	return { pic, picServer, actor, canisterId };
 }
