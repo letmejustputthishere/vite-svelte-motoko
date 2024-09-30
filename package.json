@@ -3,11 +3,11 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"setup": "npm i && dfx generate backend",
 		"start": "run-p backend frontend",
 		"frontend": "vite --host",
 		"backend": "mo-dev --generate --deploy -y",
 		"build": "vite build",
+		"prebuild": "dfx generate",
 		"pretest": "dfx generate backend",
 		"test": "run-s test:e2e test:unit",
 		"test:e2e": "vitest run",
